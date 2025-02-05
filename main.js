@@ -22,7 +22,12 @@ document.addEventListener('DOMContentLoaded', function () {
             groupAndDisplayCuaca(data.data[0].cuaca);
         } catch (error) {
             console.error('Error:', error);
-            cuacaData.innerHTML = '<h1 class="text-danger text-center">Gagal memuat data cuaca. Silakan coba lagi.</h1>';
+            cuacaData.innerHTML = `
+            <div class="text-center mt-0 mb-0">
+                <img src="404.png" class="img-fluid" alt="Data Tidak Ditemukan">
+            </div>
+            <h3 class="text-danger text-center">Mohon Maaf Data Tidak Ditemukan</h3>
+            `;
         }
     }
 
