@@ -10,37 +10,6 @@
 </head>
 <body>
     <div class="container mt-5">
-        <div class="container mx-5">
-            <label for="provinsi" class="form-label">Pilih Provinsi:</label>
-            <select id="provinsi" class="form-select">
-                <option value="">PILIH PROVINSI</option>
-            </select>
-            <p id="error-msg" class="text-danger mt-2"></p>
-        </div>
-    
-        <script>
-            async function loadProvinces() {
-                try {
-                    const response = await fetch("https://wilayah.id/api/provinces.json");
-                    if (!response.ok) throw new Error("Gagal mengambil data, status: " + response.status);
-                    
-                    const data = await response.json();
-                    const dropdown = document.getElementById("provinsi");
-                    dropdown.innerHTML = '<option value="">Pilih Provinsi</option>';
-    
-                    data.data.forEach(provinsi => {
-                        const option = document.createElement("option");
-                        option.value = provinsi.code;
-                        option.textContent = provinsi.name;
-                        dropdown.appendChild(option);
-                    });
-                } catch (error) {
-                    document.getElementById("error-msg").textContent = "Error: " + error.message;
-                }
-            }
-    
-            document.addEventListener("DOMContentLoaded", loadProvinces);
-        </script>
         <div id="lokasi-info" class="mb-4"></div>
         <div id="cuaca-data"></div>
     </div>
