@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } catch (error) {
             console.error('Error:', error);
             cuacaData.innerHTML = `
-            <div class="text-center mt-0 mb-0">
+            <div class="text-center">
                 <img src="404.png" class="img-fluid" alt="Data Tidak Ditemukan">
             </div>
             <h3 class="text-danger text-center">Mohon Maaf Data Tidak Ditemukan</h3>
@@ -57,10 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
                             <tr>
                                 <td><strong>Provinsi</strong></td>
                                 <td>${lokasi.provinsi}</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Koordinat</strong></td>
-                                <td>Lat ${lokasi.lat}, Lon ${lokasi.lon}</td>
                             </tr>
                             <tr>
                                 <td><strong>Zona Waktu</strong></td>
@@ -106,19 +102,16 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <div class="col-md-6 mb-3">
                                     <div class="card">
                                         <div class="card-body">
+                                            <div class="text-center">
+                                                <img src="${item.image}" alt="${item.weather_desc}" class="img-fluid" style="width: 100px; height: 100px;">
+                                                <h3>${item.weather_desc}</h3>
+                                            </div>
                                             <table class="table table-borderless">
                                                 <tbody>
                                                     <tr>
                                                         <td><strong>Waktu</strong></td>
                                                         <td>:</td>
                                                         <td>${item.local_datetime.split(' ')[1]}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>Cuaca</strong></td>
-                                                        <td>:</td>
-                                                        <td>${item.weather_desc} 
-                                                            <img src="${item.image}" alt="${item.weather_desc}" class="img-fluid" style="width: 50px; height: 50px;">
-                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td><strong>Suhu</strong></td>
