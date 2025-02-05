@@ -103,38 +103,34 @@ document.addEventListener('DOMContentLoaded', function () {
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="text-center">
+                                                <h4>${item.local_datetime.split(' ')[1].substring(0, 5)}</h4>
                                                 <img src="${item.image}" alt="${item.weather_desc}" class="img-fluid" style="width: 100px; height: 100px;">
                                                 <h3>${item.weather_desc}</h3>
                                             </div>
-                                            <table class="table table-borderless">
-                                                <tbody>
-                                                    <tr>
-                                                        <td><strong>Waktu</strong></td>
-                                                        <td>:</td>
-                                                        <td>${item.local_datetime.split(' ')[1]}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>Suhu</strong></td>
-                                                        <td>:</td>
-                                                        <td>${item.t}°C</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>Kelembaban</strong></td>
-                                                        <td>:</td>
-                                                        <td>${item.hu}%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>Kecepatan Angin</strong></td>
-                                                        <td>:</td>
-                                                        <td>${item.ws} km/jam (${item.wd})</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>Visibilitas</strong></td>
-                                                        <td>:</td>
-                                                        <td>${item.vs_text}</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                            <div class="container text-center mt-3">
+                                                <div class="row">
+                                                    <!-- Suhu -->
+                                                    <div class="col-12 col-md-3 mb-3">
+                                                        <i class="fa-solid fa-temperature-three-quarters" style="font-size: 2rem;"></i>
+                                                        <p>${item.t}°C</p>
+                                                    </div>
+                                                    <!-- Kelembaban -->
+                                                    <div class="col-12 col-md-3 mb-3">
+                                                        <i class="fa-solid fa-droplet" style="font-size: 2rem;"></i>
+                                                        <p>${item.hu}%</p>
+                                                    </div>
+                                                    <!-- Kecepatan Angin -->
+                                                    <div class="col-12 col-md-3 mb-3">
+                                                        <i class="fa-solid fa-wind" style="font-size: 2rem;"></i>
+                                                        <p>${item.ws} km/jam (${item.wd})</p>
+                                                    </div>
+                                                    <!-- Visibilitas -->
+                                                    <div class="col-12 col-md-3 mb-3">
+                                                        <i class="fa-solid fa-eye" style="font-size: 2rem;"></i>
+                                                        <p>${item.vs_text}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
