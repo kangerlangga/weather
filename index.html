@@ -11,6 +11,28 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center mb-4">Prakiraan Cuaca BMKG</h1>
+        <div class="container mx-5">
+            <label for="provinsi" class="form-label">Provinsi :</label>
+            <select id="provinsi" class="form-select">
+                <option value="">PILIH PROVINSI</option>
+            </select>
+        </div>
+    
+        <script>
+            $(document).ready(function() {
+                $.get("https://wilayah.id/api/provinces.json", function(response) {
+                    let dropdown = $('#provinsi');
+                    dropdown.empty();
+                    dropdown.append('<option value="">Pilih Provinsi</option>');
+                    
+                    response.data.forEach(function(provinsi) {
+                        dropdown.append(`<option value="${provinsi.code}">${provinsi.name}</option>`);
+                    });
+                }).fail(function() {
+                    alert("Gagal mengambil data provinsi");
+                });
+            });
+        </script>
         <div id="lokasi-info" class="mb-4"></div>
         <div id="cuaca-data"></div>
     </div>
