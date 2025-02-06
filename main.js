@@ -14,8 +14,6 @@ fetch('deskel.json')
     })
     .catch(error => console.error('Error loading desa data:', error));
 
-    dselect(document.querySelector('#desa-dropdown'));
-
 // Ambil elemen dropdown
 const desaDropdown = document.getElementById('desa-dropdown');
 
