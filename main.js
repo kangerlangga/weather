@@ -32,7 +32,6 @@ desaDropdown.addEventListener('change', function() {
     }
 });
 
-
 // Ambil URL saat ini
 const urlParams = new URLSearchParams(window.location.search);
 
