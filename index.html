@@ -46,33 +46,13 @@
         <h1 class="text-center mb-4">Prakiraan Cuaca BMKG Wilayah Sidoarjo</h1>
         <div id="lokasi-info" class="mb-4"></div>
         <div id="cuaca-data"></div>
-
-        <!-- Dropdown Form Pilih Desa -->
         <div class="mb-4">
-            <label for="desa-dropdown" class="form-label">Pilih Desa</label>
+            <label for="desa-dropdown" class="form-label">Pilih Desa / Kelurahan</label>
             <select id="desa-dropdown" class="form-select">
                 <option value="" disabled selected>Pilih Desa</option>
             </select>
         </div>
     </div>
-
-    <script>
-        // Function to fetch and populate dropdown
-        fetch('deskel.json')
-            .then(response => response.json())
-            .then(data => {
-                const desaDropdown = document.getElementById('desa-dropdown');
-                
-                // Iterate over the data and add options to the dropdown
-                data.forEach(item => {
-                    const option = document.createElement('option');
-                    option.value = item.kode_desa_kelurahan;  // You can use any value like kode_desa_kelurahan
-                    option.textContent = item.nama_desa_kelurahan; // This will show the name of the desa
-                    desaDropdown.appendChild(option);
-                });
-            })
-            .catch(error => console.error('Error loading desa data:', error));
-    </script>
     <script>
         let preloader = document.querySelector('#preloader');
         if (preloader) {

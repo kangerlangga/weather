@@ -1,3 +1,19 @@
+// Function to fetch and populate dropdown
+fetch('deskel.json')
+    .then(response => response.json())
+    .then(data => {
+        const desaDropdown = document.getElementById('desa-dropdown');
+        
+        // Iterate over the data and add options to the dropdown
+        data.forEach(item => {
+            const option = document.createElement('option');
+            option.value = item.kode_desa_kelurahan;  // You can use any value like kode_desa_kelurahan
+            option.textContent = item.nama_desa_kelurahan; // This will show the name of the desa
+            desaDropdown.appendChild(option);
+        });
+    })
+    .catch(error => console.error('Error loading desa data:', error));
+
 // Ambil URL saat ini
 const urlParams = new URLSearchParams(window.location.search);
 
