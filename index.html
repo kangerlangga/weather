@@ -52,7 +52,7 @@
         <div id="lokasi-info" class="mb-4"></div>
         <div id="cuaca-data"></div>
         <div class="my-3" id="desaform">
-            <select id="desa-dropdown" class="form-select">
+            <select id="desa-dropdown" class="form-select" data-dselect-search="true" data-dselect-clearable="true">
                 <option value="" disabled selected>Pilih Desa / Kelurahan</option>
             </select>
         </div>
@@ -70,7 +70,7 @@
     <!--Akhir Footer-->
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
-        dselect(document.querySelector('#desa-dropdown'))
+        // dselect(document.querySelector('#desa-dropdown'));
         let preloader = document.querySelector('#preloader');
         if (preloader) {
             window.addEventListener('load', () => {
