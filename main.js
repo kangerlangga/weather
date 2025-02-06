@@ -14,6 +14,25 @@ fetch('deskel.json')
     })
     .catch(error => console.error('Error loading desa data:', error));
 
+// Ambil elemen dropdown
+const desaDropdown = document.getElementById('desa-dropdown');
+
+// Event listener ketika ada perubahan pilihan di dropdown
+desaDropdown.addEventListener('change', function() {
+    // Ambil value yang dipilih dari dropdown
+    const selectedValue = desaDropdown.value;
+
+    // Jika ada value yang dipilih
+    if (selectedValue) {
+        // Bangun URL dengan parameter
+        const url = `https://kangerlangga.github.io/weather/?adm=${selectedValue}`;
+
+        // Redirect ke URL yang dibangun
+        window.location.href = url;
+    }
+});
+
+
 // Ambil URL saat ini
 const urlParams = new URLSearchParams(window.location.search);
 
@@ -49,15 +68,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Fungsi untuk menampilkan informasi lokasi
     function displayLokasi(lokasi) {
+        const desaDropdownContainer = document.getElementById('desaform');
+        desaDropdownContainer.classList.add('d-none');
         lokasiInfo.innerHTML = `
             <div class="card">
                 <div class="card-body">
                     <table class="table table-bordered">
                         <tbody>
-                            <tr>
-                                <td><strong>Kode Wilayah</strong></td>
-                                <td>${encodeURIComponent(adm)}</td>
-                            </tr>
                             <tr>
                                 <td><strong>Desa / Kelurahan</strong></td>
                                 <td>${lokasi.desa}</td>
