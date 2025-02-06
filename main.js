@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Error:', error);
             cuacaData.innerHTML = `
             <div class="text-center">
-                <img src="404.png" class="img-fluid" alt="Data Tidak Ditemukan">
+                <img src="img/404.png" class="img-fluid" alt="Data Tidak Ditemukan">
             </div>
             <h3 class="text-danger text-center">Mohon Maaf Data Tidak Ditemukan</h3>
             `;

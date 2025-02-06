@@ -1,15 +1,47 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- PRECONNECT -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- SIMPLE META -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prakiraan Cuaca Kabupaten Sidoarjo</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="id-ID">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <meta name="google" content="notranslate">
+    <meta name="googlebot" content="index,follow">
+    <meta name="author" content="Erlangga">
+    <meta name="language" content="id">
+    <meta name="geo.country" content="id">
+    <meta name="geo.placename" content="Indonesia">
+    <meta name="robots" content="all,index,follow">
+    <meta NAME="Distribution" CONTENT="Global">
+    <meta NAME="Rating" CONTENT="General">
+
+    <!-- WEBSITE META -->
+    <title>Prakiraan Cuaca Kabupaten Sidoarjo | Kang Erlangga</title>
+    <meta name="keywords" content="Prakiraan Cuaca, Ramalan Cuaca, Prakiraan Cuaca Kabupaten Sidoarjo">
+    <meta name="description" content="Web Prakiraan Cuaca Kabupaten Sidoarjo memberikan informasi terkait prakiraan cuaca, suhu, kelembapan, kecepatan angin, dan jarak pandang untuk desa atau kelurahan di Kabupaten Sidoarjo.">
+    <link rel="icon" type="image/png" href="img/logo.png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- DSelect Library -->
     <link rel="stylesheet" href="https://unpkg.com/@jarstone/dselect/dist/css/dselect.css">
+    <script src="https://unpkg.com/@jarstone/dselect/dist/js/dselect.js"></script>
     
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -57,7 +89,6 @@
             </select>
         </div>
     </div>
-    <!--Footer-->
     <footer class="text-white" style="background-color:#3A0241">
         <div class="container">
             <div class="row pt-3">
@@ -67,13 +98,9 @@
             </div>
         </div>
     </footer>
-    <!--Akhir Footer-->
     <script src="main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/@jarstone/dselect/dist/js/dselect.js"></script>
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
-        // dselect(document.querySelector('#desa-dropdown'));
         let preloader = document.querySelector('#preloader');
         if (preloader) {
             window.addEventListener('load', () => {
