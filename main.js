@@ -11,6 +11,8 @@ fetch('deskel.json')
             option.textContent = item.nama_desa_kelurahan; // This will show the name of the desa
             desaDropdown.appendChild(option);
         });
+        // Inisialisasi dselect setelah dropdown terisi
+        dselect(document.querySelector('#desa-dropdown'));
     })
     .catch(error => console.error('Error loading desa data:', error));
 
